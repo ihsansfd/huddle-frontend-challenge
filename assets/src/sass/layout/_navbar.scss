@@ -1,0 +1,31 @@
+@use "../custom/custom_bootstrap" as bs;
+
+.site-navbar {
+  transition: all 300ms ease-in;
+
+  &__brand-logo {
+    height: 1rem;
+    width: auto;
+
+    @include bs.media-breakpoint-up(lg) {
+      height: 1.94rem;
+    }
+  }
+
+  &--smaller-lg {
+    @include bs.media-breakpoint-up(lg) {
+      padding-top: 1rem !important;
+      padding-bottom: 1rem !important;
+
+      .site-navbar__brand-logo {
+        height: 1.2rem;
+      }
+
+      .site-navbar__button {
+        --bs-btn-padding-y: 0.5rem;
+        --bs-btn-font-size: 1rem;
+        --bs-btn-padding-x: 2rem;
+      }
+    }
+  }
+}

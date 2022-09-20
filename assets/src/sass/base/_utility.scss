@@ -1,0 +1,38 @@
+@use "../abstracts/mixins" as mix;
+@use "../custom/custom_bootstrap" as bs;
+@use "../abstracts/variables" as var;
+
+.icon-container {
+  --hd-icon-container-border-color: #{var.$very-pale-cyan};
+  --hd-icon-container-hover-border-color: #{bs.$primary};
+  --hd-icon-container-hover-icon-color: #{bs.$primary};
+  --hd-icon-container-border-radius: 60%;
+  --hd-icon-container-padding: 0.8rem;
+  --hd-icon-container-margin-x: 0.4rem;
+
+  &__icon-wrapper {
+    position: relative;
+    border: 1px solid var(--hd-icon-container-border-color);
+    border-radius: var(--hd-icon-container-border-radius);
+    padding: var(--hd-icon-container-padding);
+    display: inline-block;
+    cursor: pointer;
+
+    &:not(:last-child) {
+      margin-right: var(--hd-icon-container-margin-x);
+    }
+
+    &:hover {
+      border-color: var(--hd-icon-container-hover-border-color);
+
+      .icon-container__icon {
+        color: var(--hd-icon-container-hover-icon-color);
+      }
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    @include mix.absolute-center;
+  }
+}

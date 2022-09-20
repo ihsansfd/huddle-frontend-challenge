@@ -1,0 +1,72 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+@use "../custom/custom_bootstrap" as bs;
+
+.site-header {
+  position: relative;
+  padding-top: 9rem;
+  padding-bottom: 8.05555556rem;
+  background-color: var.$very-pale-cyan;
+  background-image: url("/assets/build/images/bg-hero-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  @include bs.media-breakpoint-up(lg) {
+    padding-top: 15rem;
+  }
+
+  &__content-wrapper {
+    max-width: 31rem;
+    margin-left: auto;
+    margin-right: auto;
+    @include bs.media-breakpoint-up(lg) {
+      margin-left: unset;
+      margin-right: unset;
+    }
+  }
+
+  &__title {
+    font-size: 1.78rem;
+    @include bs.media-breakpoint-up(lg) {
+      font-size: 2.3rem;
+    }
+  }
+
+  &__description {
+    color: var.$very-dark-cyan;
+    font-size: 0.98rem;
+  }
+
+  &__image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 31rem;
+
+    @include bs.media-breakpoint-up(lg) {
+      max-width: unset;
+    }
+  }
+  &__image {
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+
+    @include bs.media-breakpoint-up(lg) {
+      width: 30rem;
+      top: 50%;
+      right: 0;
+      transform: translate(0, -50%);
+      position: absolute;
+    }
+
+    @include bs.media-breakpoint-up(xl) {
+      width: 37rem;
+    }
+  }
+}

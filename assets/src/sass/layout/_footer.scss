@@ -1,0 +1,86 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer of the site/application.
+// -----------------------------------------------------------------------------
+
+@use "../abstracts/variables" as var;
+@use "../custom/custom_bootstrap" as bs;
+@use "../abstracts/mixins" as mix;
+
+.site-footer {
+  position: relative;
+  background-color: var.$very-dark-cyan;
+  color: var.$very-pale-cyan;
+  padding-top: 10.28rem;
+  padding-bottom: 2rem;
+  font-size: 0.9rem;
+
+  &__message-box-wrapper {
+    width: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+  }
+  &__message-box {
+    @include mix.absolute-center;
+    background-color: bs.$white;
+    width: min(40rem, 90%);
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+
+    &__button-wrapper {
+      width: max-content;
+    }
+  }
+
+  &__brand-logo {
+    height: 1.94rem;
+    width: auto;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  &__menu-items {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__menu-item {
+    margin-bottom: 1rem;
+  }
+
+  &__icon {
+    width: 0.9rem;
+    height: auto;
+    object-fit: contain;
+  }
+
+  &__link {
+    font-size: 0.4rem !important;
+  }
+
+  &__icon-column {
+    @include bs.media-breakpoint-up(lg) {
+      padding-bottom: 5rem;
+    }
+  }
+
+  &__copyright {
+    font-size: 0.8rem;
+  }
+}
+
+.gx-footer {
+  --bs-gutter-y: 2rem;
+
+  @include bs.media-breakpoint-up(lg) {
+    --bs-gutter-x: 3rem;
+  }
+  @include bs.media-breakpoint-up(xl) {
+    --bs-gutter-x: 9rem;
+  }
+}

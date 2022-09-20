@@ -1,0 +1,83 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the home page.
+// -----------------------------------------------------------------------------
+
+@use "../abstracts/variables" as var;
+@use "../custom/custom_bootstrap" as bs;
+
+.cta-section-wrapper {
+  padding-top: 9.2rem;
+  padding-bottom: 9.2rem;
+}
+
+.cta-section {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: map-get(bs.$container-max-widths, xl);
+  box-shadow: 0 0 0.6rem 0.005rem rgb(0 0 0 / 10%) !important;
+
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  @include bs.media-breakpoint-up(lg) {
+    padding-left: 8rem;
+  }
+
+  &--image-right {
+    .cta-section__row {
+      flex-direction: column-reverse;
+      @include bs.media-breakpoint-up(lg) {
+        flex-direction: row;
+      }
+    }
+
+    .cta-section__image {
+      @include bs.media-breakpoint-up(lg) {
+        margin-left: auto;
+        margin-right: unset;
+      }
+    }
+  }
+
+  &--image-left {
+    .cta-section__row {
+      flex-direction: column;
+      @include bs.media-breakpoint-up(lg) {
+        flex-direction: row;
+      }
+    }
+
+    .cta-section__image {
+      @include bs.media-breakpoint-up(lg) {
+        margin-left: unset;
+        margin-right: auto;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 1.55rem;
+  }
+
+  &__content {
+    max-width: 28rem;
+  }
+
+  &__description {
+    color: var.$grayish-blue;
+  }
+
+  &__image {
+    height: auto;
+    max-width: 100%;
+    width: 20rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

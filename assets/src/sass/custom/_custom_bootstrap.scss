@@ -1,0 +1,21 @@
+// This file is used to override vendors variables and any other default values
+
+// ######## Override Bootstrap variables #########
+
+@use "../abstracts/variables" as var;
+
+$primary: hsl(322, 100%, 66%);
+$font-family-sans-serif: var.$font-family-body;
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1400px,
+);
+
+// ######## End Override Bootstrap variables #########
+
+// Your vendor files
+@import "../vendors/bootstrap/bootstrap.scss";

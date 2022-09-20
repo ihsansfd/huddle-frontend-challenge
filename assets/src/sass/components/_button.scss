@@ -1,0 +1,37 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+
+@use "../custom/custom_bootstrap" as bs;
+@use "../abstracts/variables" as var;
+
+.hd-btn {
+  --bs-btn-border-radius: #{bs.$border-radius-pill};
+  --bs-btn-padding-y: 1rem;
+  --bs-btn-padding-x: 3.85rem;
+  --bs-btn-color: #{var.$very-pale-cyan};
+  --bs-btn-hover-bg: #{rgba(bs.$primary, 0.5)};
+  --btn-active-bg: #{rgba(bs.$primary, 0.5)};
+  --bs-btn-border-color: none;
+  --bs-btn-font-weight: 700;
+  --bs-btn-hover-color: var(--bs-btn-color);
+  --bs-btn-active-color: var(--bs-btn-color);
+
+  &--white {
+    @extend .hd-btn;
+    --bs-btn-color: #{var.$very-dark-cyan};
+    --bs-btn-bg: #{bs.$white};
+    --bs-btn-hover-bg: var(--bs-btn-bg);
+    --bs-btn-active-bg: var(--bs-btn-bg);
+    --bs-btn-hover-color: #{rgba(var.$grayish-blue, 1)};
+    --bs-btn-active-color: #{rgba(var.$grayish-blue, 1)};
+  }
+
+  &--auto {
+    @include bs.media-breakpoint-down(sm) {
+      --bs-btn-padding-y: 0.3rem;
+      --bs-btn-font-size: 0.7rem;
+      --bs-btn-padding-x: 1.5rem;
+    }
+  }
+}
